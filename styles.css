@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #0099ff, #003366);
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo h1 {
+    font-size: 2em;
+    color: #fff;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Fullscreen Section */
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 80px; /* Memberikan ruang untuk header fixed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Align text to the center */
+    padding: 20px; /* Add padding to the sections for spacing */
+}
+
+/* Hero Section */
+.hero {
+    background: rgba(0, 0, 0, 0.6);
+    position: relative;
+    padding: 110px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Max width to keep it centered */
+    margin-top: 100px; /* Give space between the hero section and the fixed header */
+    border-radius: 15px; /* Optional: add rounded corners */
+}
+
+/* Hero Text Styling */
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Hero Icon Styling */
+.welcome-icon {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+
+/* Product Section */
+
+.product-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-section h2 {
+    font-size: 2.5em;
+    margin-top: 100px; /* Menambahkan margin top agar tidak menyatu dengan taskbar menu */
+    margin-bottom: 30px; /* Memberikan jarak bawah agar teks tidak terlalu rapat dengan konten di bawahnya */
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.product-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #ffcc00;
+}
+
+.product-card p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.product-card button {
+    margin-top: 15px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #0066cc;
+}
+
+#total-price {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cart-section button, .contact-section button {
+    margin-top: 20px;
+}
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyusun elemen secara horizontal ke tengah */
+    justify-content: center; /* Menyusun elemen secara vertikal ke tengah */
+    text-align: center; /* Mengatur teks agar rata tengah */
+    padding-top: 100px; /* Memberikan jarak dari taskbar/menu atas */
+    min-height: 100vh; /* Memastikan konten berada di tengah halaman, mengisi seluruh tinggi layar */
+    width: 100%; /* Agar seluruh section memenuhi lebar halaman */
+}
+
+.cart-section h2 {
+    font-size: 2.5em;
+    margin-top: 100px; /* Menambahkan jarak top agar tidak menyatu dengan taskbar menu */
+    margin-bottom: 20px; /* Memberikan jarak bawah agar teks tidak terlalu rapat dengan konten di bawahnya */
+}
+
+.cart-section button {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 20px; /* Spacing between button and other content */
+}
+
+button:hover {
+    background-color: #0066cc;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyusun item di dalam keranjang secara horizontal ke tengah */
+    justify-content: center; /* Menyusun item secara vertikal ke tengah */
+    width: 100%; /* Memastikan konten menyesuaikan lebar penuh */
+    max-width: 1300px; /* Membatasi lebar konten agar tidak terlalu melebar */
+    height: 100%; /* Menjamin bahwa konten memiliki tinggi penuh */
+    text-align: center; /* Agar teks di dalam #cart-items terpusat */
+}
+
+#cart-items p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Cart Section */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    width: 100%; /* Ensures cart items take full width */
+    max-width: 600px; /* Limits width for readability */
+    text-align: left; /* Aligns the text in cart items */
+}
+
+.cart-item img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.cart-item p {
+    font-size: 1.2em;
+}
+
+.cart-item button {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+    background-color: #cc0000;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Styling untuk bagian Kontak */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 50px; /* Memberikan ruang antara konten dan header */
+    z-index: 1; /* Pastikan tidak tertutup oleh header */
+}
+
+
+/* Styling untuk teks di dalam kontak */
+.contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px; /* Memberikan jarak bawah agar tidak rapat dengan konten */
+    color: #ffcc00; /* Warna teks cerah */
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk daftar kontak */
+.contact-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.contact-section ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contact-section a {
+    text-decoration: none;
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+    color: #ffffff; /* Mengubah warna saat hover */
+}
+
+/* Styling untuk form kontak */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+#contact-form label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    color: #ffcc00;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #ffffff; /* Warna border saat fokus */
+}
+
+/* Styling untuk tombol kirim */
+#contact-form button {
+    background-color: #0099ff;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#contact-form button:hover {
+    background-color: #0066cc; /* Mengubah warna tombol saat hover */
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes confettiAnimation {
+    0% {
+        transform: translateY(-10px) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes giftFallAnimation {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Confetti and Gift Animations */
+.confetti, .gifts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.gifts img {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    animation: giftFallAnimation 3s infinite ease-in-out;
+}
+
+.gifts img:nth-child(1) { left: 5%; animation-duration: 3.5s; }
+.gifts img:nth-child(2) { left: 15%; animation-duration: 4s; }
+.gifts img:nth-child(3) { left: 25%; animation-duration: 3s; }
+.gifts img:nth-child(4) { left: 35%; animation-duration: 4.5s; }
+.gifts img:nth-child(5) { left: 45%; animation-duration: 3.5s; }

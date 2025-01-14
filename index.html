@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNSHOP - Aplikasi Belanja Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>FNSHOP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link" onclick="showPage('home')">Beranda</a></li>
+                <li><a href="#products" class="nav-link" onclick="showPage('products')">Produk</a></li>
+                <li><a href="#cart" class="nav-link" onclick="showPage('cart')">Keranjang</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showPage('contact')">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Selamat datang di FNSHOP</h2>
+            <p>Toko online terpercaya dengan produk berkualitas.</p>
+            <img src="images/miau3.png" alt="Selamat datang" class="welcome-icon">
+        </div>
+        <div class="confetti"></div>
+        <div class="gifts"></div>
+    </section>
+
+    <section id="products" class="product-section">
+        <h2>Produk Kami</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="images/pakaian1.jpg" alt="Produk 1">
+                <h3>Kemeja lengan pedek</h3>
+                <p>Kemeja lengan pendek dengan desain kasual dan fungsional.</p>
+                <p>Harga: Rp 500,000</p>
+                <button onclick="addToCart('Produk 1', 500000, 'images/pakaian1.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/pakaian2.jpg" alt="Produk 2">
+                <h3>Celana pendek</h3>
+                <p>Celana pendek dengan desain patchwork atau tambalan di bagian paha.</p>
+                <p>Harga: Rp 215,000</p>
+                <button onclick="addToCart('Produk 2', 215000, 'images/pakaian2.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/pakaian3.jpg" alt="Produk 3">
+                <h3>Kaos polos oversize</h3>
+                <p>Kaos dengan potongan oversize memberikan tampilan yang santa.</p>
+                <p>Harga: Rp 220,000</p>
+                <button onclick="addToCart('Produk 3', 220000, 'images/pakaian3.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="images/pakaian4.jpg" alt="Produk 4">
+                <h3>Jaket bomber satin</h3>
+                <p>Jaket bomber dengan desain klasik memberikan tampilan yang mengkilap.</p>
+                <p>Harga: Rp 720,000</p>
+                <button onclick="addToCart('Produk 4', 720000, 'images/pakaian4.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="images/pakaian5.jpg" alt="Produk 5">
+                <h3>Celana jeans slim fit</h3>
+                <p>Celana jeans memiliki potongan slim fit dengan tampilan klasik.</p>
+                <p>Harga: Rp 460,000</p>
+                <button onclick="addToCart('Produk 5', 460000, 'images/pakaian5.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="images/pakaian6.jpg" alt="Produk 6">
+                <h3>Topi baseball polos</h3>
+                <p>Terbuat dari bahan katun berkualitas yang ringan dan nyaman dipakai.</p>
+                <p>Harga: Rp 180,000</p>
+                <button onclick="addToCart('Produk 6', 180000, 'images/pakaian6.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="images/pakaian7.jpg" alt="Produk 6">
+                <h3>Sepatu sneakers</h3>
+                <p>Sol sepatu yang empuk memberikan dukungan ekstra pada kaki.</p>
+                <p>Harga: Rp 499,000</p>
+                <button onclick="addToCart('Produk 6', 499000, 'images/pakaian7.jpg')">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>    
+
+    <section id="cart" class="cart-section">
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items">
+            <p>Keranjang Anda kosong.</p>
+        </div>
+        <p id="total-price">Total: Rp 0</p>
+        <button onclick="checkout()">Lanjutkan ke Pembayaran</button>
+    </section>
+
+    <section id="contact" class="contact-section" style="display: none;">
+        <h2>Kontak Kami</h2>
+        <p>Jika Anda memiliki pertanyaan, hubungi kami di:</p>
+        <ul>
+            <li>Email: <a href="mailto:support@fnshop.com">support@fnshop.com</a></li>
+            <li>Nomor Telepon: <a href="tel:+621234567890">+62 123 456 7890</a></li>
+            <li>Alamat: Jalan Raya No. 123, Jakarta, Indonesia</li>
+        </ul>
+        
+        <!-- Formulir Kontak -->
+        <form id="contact-form" onsubmit="submitContactForm(event)">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 FNSHOP. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <!-- Animasi Serpihan Pita (Confetti) -->
+<div class="confetti">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Animasi Kado yang Jatuh -->
+<div class="gifts">
+    <img src="images/gift-box.png" alt="Gift 1">
+    <img src="images/gift-box.png" alt="Gift 2">
+    <img src="images/gift-box.png" alt="Gift 3">
+    <img src="images/gift-box.png" alt="Gift 4">
+    <img src="images/gift-box.png" alt="Gift 5">
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
